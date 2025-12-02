@@ -1,18 +1,28 @@
 /* --------------- Font Imports and Global Styles --------------- */
-
-/* فرض بر این است که فونت IRANSans در پوشه assets/fonts موجود است */
 @font-face {
-  font-family: "IRANSans";
-  src: url("../fonts/IRANSansWeb(FaNum).woff") format("woff");
-  font-weight: normal;
+  font-family: "IRANSansX";
+  src: url("../fonts/IRANSansX/IRANSansX-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IRANSansX";
+  src: url("../fonts/IRANSansX/IRANSansX-Bold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IRANSansX";
+  src: url("../fonts/IRANSansX/IRANSansX-ExtraBlack.woff2") format("woff2");
+  font-weight: 800;
   font-style: normal;
 }
 
 :root {
-  --color-primary: #e31b23; /* قرمز سازمانی */
-  --color-secondary: #000000; /* مشکی */
-  --color-text: #333333; /* طوسی تیره برای متن */
-  --color-light-gray: #f5f5f5; /* طوسی روشن برای پس زمینه سکشن‌ها */
+  --color-primary: #e31b23;
+  --color-secondary: #000000;
+  --color-text: #333333;
+  --color-light-gray: #f5f5f5;
   --color-white: #ffffff;
   --color-border: #dddddd;
   --transition-speed: 0.3s;
@@ -25,7 +35,7 @@
 }
 
 body {
-  font-family: "IRANSans", Tahoma, Arial, sans-serif;
+  font-family: "IRANSansX", Tahoma, Arial, sans-serif;
   direction: rtl;
   text-align: right;
   color: var(--color-text);
@@ -68,7 +78,7 @@ ul {
   color: var(--color-secondary);
 }
 
-/* --------------- Buttons (دکمه ها) --------------- */
+/* --------------- Buttons --------------- */
 
 .btn {
   padding: 10px 25px;
@@ -89,7 +99,7 @@ ul {
 }
 
 .btn-primary:hover {
-  background-color: #c0161d; /* طیف تیره‌تر قرمز */
+  background-color: #c0161d;
   color: var(--color-white);
 
   transform: translateY(-2px);
@@ -106,7 +116,7 @@ ul {
   transform: translateY(-2px);
 }
 
-/* --------------- Header & Navigation (هدر و منو) --------------- */
+/* --------------- Header & Navigation --------------- */
 
 .main-header {
   background-color: var(--color-white);
@@ -133,13 +143,12 @@ ul {
 }
 
 .logo img {
-  /* استایل‌های لوگو اگر تصویری باشد */
   width: 40px;
   height: 40px;
 }
 
 .menu-toggle {
-  display: none; /* مخفی در دسکتاپ */
+  display: none; /* hidden in desktop */
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -157,7 +166,7 @@ ul {
   font-weight: 500;
 }
 
-/* مگا منو - Desktop Styles (ساختار ستونی جدید) */
+/* mega menu  */
 .nav-dropdown {
   position: relative;
 }
@@ -165,18 +174,18 @@ ul {
 .mega-menu {
   display: none;
   position: absolute;
-  top: 100%; /* زیر آیتم منو */
+  top: 100%;
   right: 0;
   background-color: var(--color-white);
   border: 1px solid var(--color-border);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  min-width: 250px; /* پهنای اصلی برای دسته‌بندی‌ها */
+  min-width: 250px;
   z-index: 999;
   padding: 0;
 }
 
 .nav-dropdown:hover .mega-menu {
-  display: block; /* نمایش با هاور در دسکتاپ */
+  display: block;
 }
 
 .mega-menu-vertical .mega-menu-list {
@@ -185,7 +194,7 @@ ul {
 }
 
 .menu-category-item {
-  position: relative; /* برای قرارگیری منوی فرعی */
+  position: relative;
 }
 
 .category-title {
@@ -202,13 +211,13 @@ ul {
   color: var(--color-primary);
 }
 
-/* --------------- استایل منوی فرعی (Submenu) - FLYING MENU --------------- */
+/* --------------- (Submenu) - FLYING MENU --------------- */
 
 .submenu-devices {
   display: none;
   position: absolute;
   top: 0;
-  right: 100%; /* منوی فرعی در کنار منوی اصلی باز می‌شود */
+  right: 100%;
   min-width: 250px;
   background-color: var(--color-white);
   border: 1px solid var(--color-border);
@@ -226,10 +235,9 @@ ul {
 .submenu-devices li a:hover {
   background-color: var(--color-light-gray);
   color: var(--color-primary);
-  padding-right: 20px; /* افکت کوچک در هاور */
+  padding-right: 20px;
 }
 
-/* نمایش منوی فرعی هنگام هاور روی دسته بندی اصلی */
 .menu-category-item:hover .submenu-devices {
   display: block;
 }
@@ -238,7 +246,8 @@ ul {
 
 .hero-section {
   background-color: var(--color-light-gray);
-  background-image: url("https://via.placeholder.com/1600x600/F5F5F5/E31B23?text=Background+Image+of+Machinery"); /* تصویر پس زمینه جذاب */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("../images/food-packaging-01.webp");
   background-size: cover;
   background-position: center;
   height: 60vh;
@@ -248,20 +257,35 @@ ul {
   text-align: right;
   padding: 20px 0;
 }
-
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* margin: 0 auto; */
+}
 .hero-content h1 {
   font-size: 3rem;
-  color: var(--color-secondary);
+  color: var(--color-white);
   margin-bottom: 15px;
 }
 
 .hero-content p {
   font-size: 1.3rem;
-  color: var(--color-text);
+  /* color: var(--color-text); */
+  color: var(--color-white);
+  font-weight: 400;
   margin-bottom: 30px;
-  max-width: 600px;
+  /* max-width: 650px; */
+}
+.hero-content p span {
+  color: #ff9da0;
+  font-weight: 600;
 }
 
+.hero-content > a {
+  width: fit-content;
+}
 /* --------------- Category Preview --------------- */
 
 .category-grid {
@@ -281,7 +305,7 @@ ul {
 }
 
 .category-card:hover {
-  box-shadow: 0 8px 25px rgba(227, 27, 35, 0.15); /* سایه جذاب با رنگ سازمانی */
+  box-shadow: 0 8px 25px rgba(227, 27, 35, 0.15);
   transform: translateY(-5px);
 }
 
@@ -360,7 +384,7 @@ ul {
   background-color: #333333;
 }
 
-/* --------------- Footer (فوتر) --------------- */
+/* --------------- Footer --------------- */
 
 .main-footer {
   background-color: var(--color-secondary);
@@ -370,7 +394,7 @@ ul {
 
 .footer-container {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr; /* فرم بزرگتر، بقیه کوچکتر */
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 40px;
   padding-bottom: 30px;
   border-bottom: 1px solid #444;
@@ -450,28 +474,27 @@ ul {
 @media (max-width: 992px) {
   /* Header - Mobile */
   .menu-toggle {
-    display: block; /* نمایش دکمه منو در موبایل */
+    display: block;
   }
 
   .header-action {
-    display: none; /* دکمه مشاوره را موقتاً پنهان کنید تا فضا باز شود */
+    display: none;
   }
 
   .main-nav {
-    /* ساختار اسلایدری در موبایل */
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
     background-color: var(--color-white);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    max-height: 0; /* برای انیمیشن بسته */
+    max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-in-out; /* انیمیشن نرم */
+    transition: max-height 0.4s ease-in-out;
   }
 
   .main-nav.is-open {
-    max-height: 500px; /* باز شدن منو */
+    max-height: 500px;
   }
 
   .nav-list {
@@ -490,7 +513,6 @@ ul {
     color: var(--color-text);
   }
 
-  /* مگا منو در موبایل - آکاردئونی */
   .nav-dropdown:hover .mega-menu,
   .mega-menu {
     display: none;
@@ -510,19 +532,17 @@ ul {
     padding-top: 0;
   }
 
-  /* مدیریت زیرمنوها (دستگاه‌ها) در موبایل */
   .menu-category-item:hover .submenu-devices,
   .submenu-devices {
     position: static;
     border: none;
     box-shadow: none;
     min-width: auto;
-    padding-right: 20px; /* تورفتگی برای زیرشاخه */
+    padding-right: 20px;
     display: none;
     transition: none;
   }
 
-  /* کلاس جاوا اسکریپتی برای باز شدن زیرمنو با کلیک */
   .menu-category-item.is-open .submenu-devices {
     display: block;
   }
@@ -530,12 +550,12 @@ ul {
   /* Grid Layouts */
   .category-grid,
   .features-grid {
-    grid-template-columns: 1fr; /* یک ستونه در موبایل */
+    grid-template-columns: 1fr;
   }
 
   /* Footer Layout */
   .footer-container {
-    grid-template-columns: 1fr; /* یک ستونه در موبایل */
+    grid-template-columns: 1fr;
     text-align: center;
   }
 
@@ -549,9 +569,8 @@ ul {
   }
 }
 
-/* --------------- JavaScript Animations Classes (برای انیمیشن اسکرول) --------------- */
+/* --------------- JavaScript Animations Classes  --------------- */
 
-/* به طور پیش‌فرض، عناصر انیمیشن دار را پنهان کنید */
 .animate-fadein,
 .animate-slideup,
 .animate-zoom {
@@ -559,12 +578,10 @@ ul {
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* افکت Fade-in */
 .animate-fadein.is-visible {
   opacity: 1;
 }
 
-/* افکت Slide-up */
 .animate-slideup {
   transform: translateY(20px);
 }
@@ -573,7 +590,6 @@ ul {
   transform: translateY(0);
 }
 
-/* افکت Zoom (برای کارت‌ها) */
 .animate-zoom {
   transform: scale(0.9);
 }
@@ -582,7 +598,6 @@ ul {
   transform: scale(1);
 }
 
-/* تاخیر در انیمیشن */
 .delay-1 {
   transition-delay: 0.1s;
 }
