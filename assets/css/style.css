@@ -1,0 +1,594 @@
+/* --------------- Font Imports and Global Styles --------------- */
+
+/* فرض بر این است که فونت IRANSans در پوشه assets/fonts موجود است */
+@font-face {
+  font-family: "IRANSans";
+  src: url("../fonts/IRANSansWeb(FaNum).woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --color-primary: #e31b23; /* قرمز سازمانی */
+  --color-secondary: #000000; /* مشکی */
+  --color-text: #333333; /* طوسی تیره برای متن */
+  --color-light-gray: #f5f5f5; /* طوسی روشن برای پس زمینه سکشن‌ها */
+  --color-white: #ffffff;
+  --color-border: #dddddd;
+  --transition-speed: 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "IRANSans", Tahoma, Arial, sans-serif;
+  direction: rtl;
+  text-align: right;
+  color: var(--color-text);
+  line-height: 1.6;
+  background-color: var(--color-white);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text);
+  transition: color var(--transition-speed), padding var(--transition-speed);
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+.section-gray {
+  background-color: var(--color-light-gray);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.2rem;
+  color: var(--color-secondary);
+}
+
+/* --------------- Buttons (دکمه ها) --------------- */
+
+.btn {
+  padding: 10px 25px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color var(--transition-speed), transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: #c0161d; /* طیف تیره‌تر قرمز */
+  color: var(--color-white);
+
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+/* --------------- Header & Navigation (هدر و منو) --------------- */
+
+.main-header {
+  background-color: var(--color-white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  /* استایل‌های لوگو اگر تصویری باشد */
+  width: 40px;
+  height: 40px;
+}
+
+.menu-toggle {
+  display: none; /* مخفی در دسکتاپ */
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+.nav-list {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-link {
+  padding: 10px 0;
+  font-weight: 500;
+}
+
+/* مگا منو - Desktop Styles (ساختار ستونی جدید) */
+.nav-dropdown {
+  position: relative;
+}
+
+.mega-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* زیر آیتم منو */
+  right: 0;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  min-width: 250px; /* پهنای اصلی برای دسته‌بندی‌ها */
+  z-index: 999;
+  padding: 0;
+}
+
+.nav-dropdown:hover .mega-menu {
+  display: block; /* نمایش با هاور در دسکتاپ */
+}
+
+.mega-menu-vertical .mega-menu-list {
+  display: block;
+  padding: 0;
+}
+
+.menu-category-item {
+  position: relative; /* برای قرارگیری منوی فرعی */
+}
+
+.category-title {
+  display: block;
+  padding: 12px 15px;
+  font-weight: bold;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-light-gray);
+  transition: background-color var(--transition-speed);
+}
+
+.category-title:hover {
+  background-color: var(--color-light-gray);
+  color: var(--color-primary);
+}
+
+/* --------------- استایل منوی فرعی (Submenu) - FLYING MENU --------------- */
+
+.submenu-devices {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 100%; /* منوی فرعی در کنار منوی اصلی باز می‌شود */
+  min-width: 250px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1001;
+  padding: 10px 0;
+}
+
+.submenu-devices li a {
+  display: block;
+  padding: 10px 15px;
+  font-size: 0.95rem;
+}
+
+.submenu-devices li a:hover {
+  background-color: var(--color-light-gray);
+  color: var(--color-primary);
+  padding-right: 20px; /* افکت کوچک در هاور */
+}
+
+/* نمایش منوی فرعی هنگام هاور روی دسته بندی اصلی */
+.menu-category-item:hover .submenu-devices {
+  display: block;
+}
+
+/* --------------- Hero Section --------------- */
+
+.hero-section {
+  background-color: var(--color-light-gray);
+  background-image: url("https://via.placeholder.com/1600x600/F5F5F5/E31B23?text=Background+Image+of+Machinery"); /* تصویر پس زمینه جذاب */
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  padding: 20px 0;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: var(--color-secondary);
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  color: var(--color-text);
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+/* --------------- Category Preview --------------- */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.category-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+}
+
+.category-card:hover {
+  box-shadow: 0 8px 25px rgba(227, 27, 35, 0.15); /* سایه جذاب با رنگ سازمانی */
+  transform: translateY(-5px);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 15px;
+}
+
+.category-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.link-more {
+  font-weight: bold;
+  color: var(--color-primary);
+  margin-top: 15px;
+  display: block;
+}
+
+/* --------------- Why Arad / Features --------------- */
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.feature-item {
+  padding: 20px;
+  background-color: var(--color-white);
+  border-radius: 8px;
+}
+
+.feature-icon {
+  font-size: 2rem;
+  color: var(--color-secondary);
+  margin-bottom: 10px;
+}
+
+.feature-item h4 {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  margin-bottom: 5px;
+}
+
+/* --------------- Final CTA --------------- */
+
+.final-cta {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  text-align: center;
+}
+
+.final-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--color-white);
+}
+
+.final-cta p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.btn-large {
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.btn-large:hover {
+  background-color: #333333;
+}
+
+/* --------------- Footer (فوتر) --------------- */
+
+.main-footer {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  padding-top: 50px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr; /* فرم بزرگتر، بقیه کوچکتر */
+  gap: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #444;
+}
+
+.footer-container h3 {
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+/* Footer Quick Contact Form */
+
+.quick-contact-form input,
+.quick-contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333333;
+  color: var(--color-white);
+}
+
+.quick-contact-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.quick-contact-form button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-footer {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Footer Links & About */
+
+.footer-links ul a {
+  color: var(--color-white);
+  padding: 5px 0;
+  display: block;
+}
+
+.footer-links ul a:hover {
+  color: var(--color-primary);
+  padding-right: 5px;
+}
+
+.social-links {
+  margin-top: 15px;
+}
+
+.social-links a {
+  color: var(--color-white);
+  font-size: 1.5rem;
+  margin-left: 15px;
+}
+
+.social-links a:hover {
+  color: var(--color-primary);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  color: #999999;
+}
+
+/* --------------- Mobile Responsiveness (Media Queries) --------------- */
+
+/* تا 992px - تبلت و موبایل */
+@media (max-width: 992px) {
+  /* Header - Mobile */
+  .menu-toggle {
+    display: block; /* نمایش دکمه منو در موبایل */
+  }
+
+  .header-action {
+    display: none; /* دکمه مشاوره را موقتاً پنهان کنید تا فضا باز شود */
+  }
+
+  .main-nav {
+    /* ساختار اسلایدری در موبایل */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-white);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    max-height: 0; /* برای انیمیشن بسته */
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out; /* انیمیشن نرم */
+  }
+
+  .main-nav.is-open {
+    max-height: 500px; /* باز شدن منو */
+  }
+
+  .nav-list {
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 0;
+  }
+
+  .nav-list li {
+    border-bottom: 1px solid var(--color-light-gray);
+  }
+
+  .nav-link {
+    padding: 15px 20px;
+    display: block;
+    color: var(--color-text);
+  }
+
+  /* مگا منو در موبایل - آکاردئونی */
+  .nav-dropdown:hover .mega-menu,
+  .mega-menu {
+    display: none;
+    position: static;
+    box-shadow: none;
+    padding: 10px 0;
+    border: none;
+  }
+
+  .mega-menu.is-open {
+    display: block;
+  }
+
+  .mega-menu-list {
+    flex-direction: column;
+    gap: 0;
+    padding-top: 0;
+  }
+
+  /* مدیریت زیرمنوها (دستگاه‌ها) در موبایل */
+  .menu-category-item:hover .submenu-devices,
+  .submenu-devices {
+    position: static;
+    border: none;
+    box-shadow: none;
+    min-width: auto;
+    padding-right: 20px; /* تورفتگی برای زیرشاخه */
+    display: none;
+    transition: none;
+  }
+
+  /* کلاس جاوا اسکریپتی برای باز شدن زیرمنو با کلیک */
+  .menu-category-item.is-open .submenu-devices {
+    display: block;
+  }
+
+  /* Grid Layouts */
+  .category-grid,
+  .features-grid {
+    grid-template-columns: 1fr; /* یک ستونه در موبایل */
+  }
+
+  /* Footer Layout */
+  .footer-container {
+    grid-template-columns: 1fr; /* یک ستونه در موبایل */
+    text-align: center;
+  }
+
+  .footer-links ul {
+    padding-right: 0;
+  }
+
+  .footer-links ul a {
+    display: inline-block;
+    margin: 0 10px;
+  }
+}
+
+/* --------------- JavaScript Animations Classes (برای انیمیشن اسکرول) --------------- */
+
+/* به طور پیش‌فرض، عناصر انیمیشن دار را پنهان کنید */
+.animate-fadein,
+.animate-slideup,
+.animate-zoom {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* افکت Fade-in */
+.animate-fadein.is-visible {
+  opacity: 1;
+}
+
+/* افکت Slide-up */
+.animate-slideup {
+  transform: translateY(20px);
+}
+.animate-slideup.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* افکت Zoom (برای کارت‌ها) */
+.animate-zoom {
+  transform: scale(0.9);
+}
+.animate-zoom.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* تاخیر در انیمیشن */
+.delay-1 {
+  transition-delay: 0.1s;
+}
+.delay-2 {
+  transition-delay: 0.2s;
+}
+.delay-3 {
+  transition-delay: 0.3s;
+}
