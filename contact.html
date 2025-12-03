@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تماس با ما | ماشین سازی آراد</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="container header-container">
+        <div class="logo">
+          <a href="index.html">
+            <span class="logo-text">ماشین سازی آراد</span>
+          </a>
+        </div>
+        <button
+          class="menu-toggle"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <nav id="main-nav" class="main-nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">خانه</a></li>
+            <li class="nav-dropdown">
+              <a href="products.html" class="nav-link nav-link--dropdown"
+                >محصولات <i class="fas fa-chevron-down nav-arrow"></i
+              ></a>
+              <div class="mega-menu mega-menu-vertical">...</div>
+            </li>
+            <li><a href="about.html" class="nav-link">درباره ما</a></li>
+            <li>
+              <a href="contact.html" class="nav-link active">تماس با ما</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-action">
+          <a href="#contact-form-section" class="btn btn-primary"
+            ><i class="fas fa-headset"></i> درخواست مشاوره</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section class="page-hero section-gray">
+        <div class="container text-center">
+          <h1 class="animate-fadein">
+            در تماس باشید، ما آماده پاسخگویی هستیم.
+          </h1>
+          <p class="animate-slideup">
+            شما می‌توانید از طریق فرم زیر، شماره‌های تماس یا آدرس ما با ما در
+            ارتباط باشید.
+          </p>
+          <div class="contact-quick-info animate-slideup delay-1">
+            <span class="info-item"
+              ><i class="fas fa-phone-alt"></i> ۰۲۱-۱۲۳۴۵۶۷۸</span
+            >
+            <span class="info-item"
+              ><i class="fas fa-envelope"></i> info@aradmachinery.com</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-main section-padding">
+        <div class="container contact-grid">
+          <div
+            class="contact-form-container animate-slideup"
+            id="contact-form-section"
+          >
+            <h2 class="form-title">فرم ارسال پیام سریع</h2>
+            <p>درخواست مشاوره، پشتیبانی یا اطلاعات بیشتر خود را ثبت کنید.</p>
+            <form class="contact-form">
+              <div class="form-group-half">
+                <input type="text" placeholder="نام و نام خانوادگی*" required />
+                <input type="email" placeholder="آدرس ایمیل*" required />
+              </div>
+              <div class="form-group-half">
+                <input type="tel" placeholder="شماره تماس*" required />
+                <select required>
+                  <option value="">موضوع پیام را انتخاب کنید*</option>
+                  <option value="sales">درخواست فروش و مشاوره</option>
+                  <option value="support">پشتیبانی و خدمات پس از فروش</option>
+                  <option value="hr">همکاری و منابع انسانی</option>
+                </select>
+              </div>
+              <textarea
+                placeholder="پیام شما (حداقل ۲۰ کاراکتر)*"
+                required
+                minlength="20"
+              ></textarea>
+
+              <div class="form-action">
+                <button type="submit" class="btn btn-primary btn-large">
+                  ارسال پیام <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="map-and-details animate-slideup delay-1">
+            <div class="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d161999.66487779774!2d51.24647978280628!3d35.70732822769447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e00491ff2e1b9%3A0x86134444342894b9!2z2qnZiCDZhduM2K_Zhdiv24zYp9uM2Yc!5e0!3m2!1sen!2sfr!4v1703080644026!5m2!1sen!2sfr"
+                width="100%"
+                height="300"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
+            </div>
+
+            <div class="address-details">
+              <h4 class="details-title">آدرس دفتر مرکزی و کارخانه</h4>
+              <p>
+                <i class="fas fa-map-marker-alt"></i> اصفهان ، بلوار ارغوانیه
+              </p>
+              <h4 class="details-title">ساعات کاری</h4>
+              <p>
+                <i class="fas fa-clock"></i> شنبه تا چهارشنبه: ۸:۰۰ الی ۱۷:۰۰
+              </p>
+              <p class="mb-0">
+                <i class="fas fa-calendar-alt"></i> پنجشنبه و جمعه: تعطیل
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="direct-contacts section-padding section-gray">
+        <div class="container">
+          <h2 class="section-title animate-fadein">
+            تماس مستقیم با دپارتمان‌های کلیدی
+          </h2>
+
+          <div class="contact-department-grid">
+            <div class="department-card animate-zoom">
+              <i class="fas fa-hand-holding-usd dept-icon"></i>
+              <h4>فروش و مشاوره فنی</h4>
+              <p>برای دریافت قیمت و مشاوره فنی دستگاه‌ها.</p>
+              <a href="tel:02198765432" class="dept-link">۰۳۱-۹۸۷۶۵۴۳۲</a>
+              <a href="mailto:sales@aradmachinery.com" class="dept-link"
+                >sales@...</a
+              >
+            </div>
+            <div class="department-card animate-zoom delay-1">
+              <i class="fas fa-tools dept-icon"></i>
+              <h4>پشتیبانی و گارانتی</h4>
+              <p>خدمات پس از فروش، گارانتی و تعمیرات.</p>
+              <a href="tel:02199887766" class="dept-link">۰۳۱-۹۹۸۸۷۷۶۶</a>
+              <a href="mailto:support@aradmachinery.com" class="dept-link"
+                >support@...</a
+              >
+            </div>
+            <div class="department-card animate-zoom delay-2">
+              <i class="fas fa-user-tie dept-icon"></i>
+              <h4>منابع انسانی و همکاری</h4>
+              <p>ارسال رزومه و درخواست همکاری شغلی.</p>
+              <a href="tel:02155443322" class="dept-link">۰۳۱-۵۵۴۴۳۳۲۲</a>
+              <a href="mailto:hr@aradmachinery.com" class="dept-link">hr@...</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">...</footer>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
