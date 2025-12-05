@@ -486,11 +486,17 @@ function openProductModal(id) {
                 `;
   });
 
+  // Build gallery thumbnails array (we'll render slider UI below)
   let galleryHTML = "";
   product.gallery.forEach((img, index) => {
-    galleryHTML += `<img src="${img}" alt="تصویر ${
-      index + 1
-    }" class="w-full h-48 object-cover rounded-xl shadow-lg hover:scale-105 transition">`;
+    galleryHTML +=
+      `<button class=\"modal-thumb\" data-index=\"${index}\" aria-label=\"تصویر ${
+        index + 1
+      }\">` +
+      `<img src=\"${img}\" alt=\"تصویر ${
+        index + 1
+      }\" class=\"w-full h-20 object-cover rounded-lg\"/>` +
+      `</button>`;
   });
 
   const categoryColors = {
@@ -502,17 +508,21 @@ function openProductModal(id) {
   modalBody.innerHTML = `
                 <div class="grid md:grid-cols-2 gap-10">
                     <div>
-                        <div class="relative mb-6 rounded-2xl overflow-hidden shadow-2xl">
-                            <img src="${product.image}" alt="${
+                        <div class="relative mb-6 rounded-2xl overflow-hidden shadow-2xl modal-slider">
+                          <button class="slider-arrow left" aria-label="قبلی">‹</button>
+                          <div class="slider-main">
+                            <img src="${
+                              product.gallery[0] || product.image
+                            }" alt="${
     product.name
-  }" class="w-full rounded-2xl">
-                            <span class="absolute top-4 right-4 px-4 py-2 rounded-xl text-sm font-semibold shadow-lg" style="${
-                              categoryColors[product.categoryColor]
-                            }">${product.category}</span>
+  }" id="modalMainImage" class="w-full rounded-2xl object-cover" />
+                          </div>
+                          <button class="slider-arrow right" aria-label="بعدی">›</button>
+                          <span class="absolute top-4 right-4 px-4 py-2 rounded-xl text-sm font-semibold shadow-lg" style="${
+                            categoryColors[product.categoryColor]
+                          }">${product.category}</span>
                         </div>
-                        <div class="grid grid-cols-3 gap-4">
-                            ${galleryHTML}
-                        </div>
+                        <div class="grid grid-cols-4 gap-3 modal-thumbs">${galleryHTML}</div>
                     </div>
                     <div>
                         <h3 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--text-primary)">${
@@ -534,34 +544,74 @@ function openProductModal(id) {
                             </table>
                         </div>
 
-                        <h4 class="text-2xl font-bold mb-4 flex items-center gap-2" style="color: var(--text-primary)">
-                            <i class="fas fa-star text-yellow-500"></i>
-                            ویژگی‌های برجسته
-                        </h4>
-                        <ul class="mb-8">
-                            ${featuresHTML}
-                        </ul>
+                      </div>
+                    </div>
 
-                        <h4 class="text-2xl font-bold mb-4 flex items-center gap-2" style="color: var(--text-primary)">
-                            <i class="fas fa-play-circle text-red-600"></i>
-                            ویدیوی دمو
-                        </h4>
-                        <div class="aspect-video mb-8 rounded-2xl overflow-hidden shadow-lg">
-                            <iframe src="${
-                              product.video
-                            }" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
-                        </div>
-
+                    <!-- Video (full width) -->
+                    <div class="mt-8">
+                      <div class="video-wrap rounded-2xl overflow-hidden shadow-lg" style="border:1px solid var(--border-color)">
+                        <iframe src="${
+                          product.video
+                        }" class="w-full" style="height:520px;border:0;display:block;" frameborder="0" allowfullscreen></iframe>
+                      </div>
+                      <div class="mt-6">
                         <button onclick="scrollToContact(); closeProductModal();" class="btn-primary w-full justify-center text-lg py-4">
-                            <i class="fas fa-headset"></i>
-                            درخواست مشاوره برای این محصول
+                          <i class="fas fa-headset"></i>
+                          درخواست مشاوره برای این محصول
                         </button>
+                      </div>
+                    </div>
                     </div>
                 </div>
             `;
 
   modal.classList.add("active");
   document.body.style.overflow = "hidden";
+
+  // Initialize slider behavior inside modal
+  try {
+    const modalEl = document.getElementById("productModal");
+    const mainImg = modalEl.querySelector("#modalMainImage");
+    const thumbs = Array.from(modalEl.querySelectorAll(".modal-thumb"));
+    const leftArrow = modalEl.querySelector(".slider-arrow.left");
+    const rightArrow = modalEl.querySelector(".slider-arrow.right");
+    let currentIndex = 0;
+
+    function updateMain(index) {
+      const src = product.gallery[index] || product.image;
+      if (mainImg) mainImg.src = src;
+      thumbs.forEach((t) => t.classList.remove("active"));
+      const activeThumb = thumbs.find((t) => +t.dataset.index === index);
+      if (activeThumb) activeThumb.classList.add("active");
+      currentIndex = index;
+    }
+
+    thumbs.forEach((t) => {
+      t.addEventListener("click", () => {
+        const idx = +t.dataset.index;
+        updateMain(idx);
+      });
+    });
+
+    if (leftArrow) {
+      leftArrow.addEventListener("click", () => {
+        const next =
+          (currentIndex - 1 + product.gallery.length) % product.gallery.length;
+        updateMain(next);
+      });
+    }
+    if (rightArrow) {
+      rightArrow.addEventListener("click", () => {
+        const next = (currentIndex + 1) % product.gallery.length;
+        updateMain(next);
+      });
+    }
+
+    // set initial
+    updateMain(0);
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 // Close Product Modal
@@ -744,7 +794,7 @@ revealOnScroll(); // Initial check
     });
   });
 
-  // initialize
+  // Initialize
   setActiveTab(tabs[0]);
   filterProducts("all");
 })();
@@ -783,7 +833,7 @@ revealOnScroll(); // Initial check
   });
 })();
 
-//////////////////
+// Mega Menu: Show submenus on hover
 document.querySelectorAll(".category-item").forEach((item) => {
   item.addEventListener("mouseenter", () => {
     // Remove active class from all items
@@ -816,15 +866,6 @@ document.getElementById("megaMenu").addEventListener("mouseleave", () => {
     .forEach((s) => s.classList.remove("active"));
 });
 
-// Show first category on menu open
-// productsMenuWrapper.addEventListener("mouseenter", () => {
-//   const firstCategory = document.querySelector(".category-item");
-//   if (firstCategory && !document.querySelector(".submenu.active")) {
-//     firstCategory.classList.add("active");
-//     const targetId = firstCategory.dataset.target;
-//     document.querySelector("#" + targetId).classList.add("active");
-//   }
-// });
 
 // Make menu items clickable to navigate or scroll to products
 document.querySelectorAll(".mega-menu-item").forEach((item) => {
