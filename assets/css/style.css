@@ -410,7 +410,7 @@ header.scrolled {
   top: 100%;
   right: auto;
   left: 50%;
-  margin-top: 0px;
+    margin-top: 12px;
   width: 360px;
   max-width: 95vw;
   background: var(--card-bg);
@@ -1232,26 +1232,24 @@ header.scrolled {
 
 /* Fixed centered copyright bar with rounded top corners */
 .copyright-bar {
-  position: fixed;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 99999;
-  width: min(1100px, calc(100% - 32px));
-  background: linear-gradient(90deg, #1e293b 0%, #2563eb 100%);
-  color: white;
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 48px;
+  margin-bottom: 0;
+  padding: 12px 18px;
+  background: var(--text-primary);
+  color:var(--text-tertiary);
   text-align: center;
-  padding: 10px 18px;
-  border-radius: 12px 12px 0 0; /* rounded top-left & top-right corners */
-  box-shadow: 0 12px 40px rgba(2, 6, 23, 0.45);
+  border-radius: 30px 30px 0 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
   font-size: 13px;
 }
-
 @media (max-width: 480px) {
   .copyright-bar {
-    width: calc(100% - 20px);
-    padding: 8px 12px;
+    padding: 12px;
     font-size: 12px;
+    margin-top: 32px;
   }
 }
 
