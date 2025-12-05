@@ -63,10 +63,7 @@
           "areaServed": "IR",
           "availableLanguage": ["Persian", "English"]
         },
-        "sameAs": [
-          "https://www.linkedin.com/company/arad-machine",
-          "https://www.instagram.com/arad.machine"
-        ],
+        "sameAs": ["https://www.instagram.com/arad.machine"],
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "اصفهان ، ارغوانیه",
@@ -86,7 +83,7 @@
         <div></div>
         <div></div>
       </div>
-      <div class="loader-text">ماشین سازی آراد</div>
+      <div class="loader-text">گروه صنعتی ماشین سازی آراد</div>
     </div>
 
     <!-- Mobile Overlay -->
@@ -1037,6 +1034,8 @@
                   required
                   class="form-input"
                   placeholder="09123456789"
+                  pattern="[0-9]{10,15}"
+                  style="text-align: right"
                 />
               </div>
               <div>
@@ -1045,7 +1044,12 @@
                   style="color: var(--text-primary)"
                   >نوع درخواست *</label
                 >
-                <select name="type" required class="form-input">
+                <select
+                  name="type"
+                  required
+                  class="form-input"
+                  style="appearance: none"
+                >
                   <option value="">انتخاب کنید</option>
                   <option value="consultation">مشاوره رایگان</option>
                   <option value="purchase">خرید محصول</option>
@@ -1329,8 +1333,8 @@
         </div>
 
         <!-- Bottom Footer -->
-        <div class="copyright-bar" role="contentinfo" >
-           شرکت ماشین‌سازی آراد. تمامی حقوق محفوظ است. © 2025
+        <div class="copyright-bar" role="contentinfo">
+          شرکت ماشین‌سازی آراد. تمامی حقوق محفوظ است. © 2025
         </div>
       </div>
     </footer>

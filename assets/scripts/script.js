@@ -11,7 +11,7 @@ AOS.init({
 window.addEventListener("load", () => {
   setTimeout(() => {
     document.getElementById("preloader").classList.add("hidden");
-  }, 1200);
+  }, 1000);
 });
 
 // Theme Toggle
@@ -544,6 +544,16 @@ backToTop.addEventListener("click", () => {
 function scrollToContact() {
   document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
   closeMobileMenuFunc();
+}
+
+// Prevent typing letters in phone input
+const phoneInput = document.querySelector('input[name="phone"]');
+
+if (phoneInput) {
+  phoneInput.addEventListener("input", function (e) {
+    // Remove all non-numeric characters
+    this.value = this.value.replace(/[^0-9]/g, "");
+  });
 }
 
 // Contact Form Submission
