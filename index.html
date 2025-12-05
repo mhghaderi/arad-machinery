@@ -45,6 +45,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="./assets/css/normalize.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -74,7 +75,7 @@
         }
       }
     </script>
-    <script src="./assets/js/script.js" defer></script>
+    <script type="module" src="./assets/scripts/script.js"></script>
   </head>
   <body>
     <!-- Preloader -->
@@ -1202,6 +1203,8 @@
     >
       <div class="container mx-auto px-4">
         <div class="grid md:grid-cols-4 gap-10 mb-12">
+          <!-- Mobile Spacer between sections -->
+          <div class="block md:hidden col-span-4 w-full h-6"></div>
           <!-- About -->
           <div>
             <div class="flex items-center space-x-3 space-x-reverse mb-5">
@@ -1219,6 +1222,33 @@
               راه‌حل‌های هوشمند بسته‌بندی صنعتی با بیش از 15 سال تجربه، تخصص و
               کیفیت برتر
             </p>
+            <!-- Social Media Icons under About -->
+            <div class="flex gap-3 mt-6 justify-center">
+              <a
+                href="#"
+                class="w-9 h-9 bg-blue-700 rounded-xl flex items-center justify-center hover:bg-blue-600 transition text-white shadow-lg"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 bg-blue-700 rounded-xl flex items-center justify-center hover:bg-blue-600 transition text-white shadow-lg"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 bg-blue-700 rounded-xl flex items-center justify-center hover:bg-blue-600 transition text-white shadow-lg"
+              >
+                <i class="fab fa-telegram"></i>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 bg-blue-700 rounded-xl flex items-center justify-center hover:bg-blue-600 transition text-white shadow-lg"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
           </div>
 
           <!-- Quick Links -->
@@ -1299,40 +1329,8 @@
         </div>
 
         <!-- Bottom Footer -->
-        <div class="border-t border-blue-700 pt-8">
-          <div
-            class="flex flex-col md:flex-row justify-between items-center gap-6"
-          >
-            <p class="text-blue-100 text-center md:text-right">
-              © 2024 شرکت ماشین‌سازی آراد. تمامی حقوق محفوظ است.
-            </p>
-            <div class="flex gap-4">
-              <a
-                href="#"
-                class="w-11 h-11 bg-blue-700 rounded-xl flex items-center justify-center hover:bg-blue-600 transition text-white shadow-lg"
-              >
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-              <a
-                href="#"
-                class="w-11 h-11 bg-blue-700 rounded-xl flex items-center justify-center hover:bg-blue-600 transition text-white shadow-lg"
-              >
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a
-                href="#"
-                class="w-11 h-11 bg-blue-700 rounded-xl flex items-center justify-center hover:bg-blue-600 transition text-white shadow-lg"
-              >
-                <i class="fab fa-telegram"></i>
-              </a>
-              <a
-                href="#"
-                class="w-11 h-11 bg-blue-700 rounded-xl flex items-center justify-center hover:bg-blue-600 transition text-white shadow-lg"
-              >
-                <i class="fab fa-whatsapp"></i>
-              </a>
-            </div>
-          </div>
+        <div class="copyright-bar" role="contentinfo">
+          © 2024 شرکت ماشین‌سازی آراد. تمامی حقوق محفوظ است.
         </div>
       </div>
     </footer>
