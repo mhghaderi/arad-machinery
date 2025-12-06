@@ -611,7 +611,7 @@ header.scrolled {
   background-color: var(--bg-secondary);
   background-image: linear-gradient(
       30deg,
-      var(--bg-tertiary) 12%,
+      var(--bg-primary) 12%,
       transparent 12.5%,
       transparent 87%,
       var(--bg-tertiary) 87.5%,
