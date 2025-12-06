@@ -396,7 +396,7 @@ window.openProductModal = function openProductModal(id) {
                             <i class="fas fa-cogs text-blue-600"></i>
                             مشخصات فنی
                         </h4>
-                        <div class="mb-8 rounded-2xl overflow-hidden shadow-lg" style="border: 1px solid var(--border-color)">
+                        <div class="rounded-2xl overflow-hidden shadow-lg" style="border: 1px solid var(--border-color)">
                             <table class="w-full">
                                 <tbody>
                                     ${specsHTML}
@@ -545,6 +545,10 @@ function scrollToContact() {
   document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
   closeMobileMenuFunc();
 }
+
+// Expose to window for inline onclick handlers (modules are not global)
+window.scrollToContact = scrollToContact;
+window.closeMobileMenuFunc = closeMobileMenuFunc;
 
 // Prevent typing letters in phone input
 const phoneInput = document.querySelector('input[name="phone"]');
