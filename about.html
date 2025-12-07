@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="شرکت ماشین‌سازی آراد - صفحه درباره ما - معرفی شرکت، تجربه، تیم و ارزش‌ها"
+    />
+    <meta
+      name="keywords"
+      content="درباره ما, ماشین‌سازی آراد, دستگاه بسته‌بندی, تیم, تجربه"
+    />
+    <meta name="author" content="شرکت ماشین‌سازی آراد" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="ماشین‌سازی آراد - درباره ما" />
+    <meta
+      property="og:description"
+      content="معرفی شرکت ماشین‌سازی آراد، تجربه، تیم و ارزش‌ها"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://aradmachine.com/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#2563EB" />
+    <title>درباره ما | ماشین‌سازی آراد</title>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="./assets/css/normalize.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "شرکت ماشین‌سازی آراد",
+        "description": "طراحی و تولید دستگاه‌های بسته‌بندی صنعتی",
+        "url": "https://www.aradmachine.com",
+        "logo": "https://www.aradmachine.com/logo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+98-21-1234567",
+          "contactType": "Customer Service",
+          "areaServed": "IR",
+          "availableLanguage": ["Persian", "English"]
+        },
+        "sameAs": ["https://www.instagram.com/arad.machine"],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "اصفهان ، ارغوانیه",
+          "addressLocality": "اصفهان",
+          "addressCountry": "IR"
+        }
+      }
+    </script>
+
+    <script type="module" src="./assets/scripts/script.js"></script>
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="loader-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="loader-text">گروه صنعتی ماشین سازی آراد</div>
+    </div>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="p-6">
+        <div class="flex justify-between items-center mb-8">
+          <h3 class="text-2xl font-bold" style="color: var(--text-primary)">
+            منوی اصلی
+          </h3>
+          <div class="flex items-center gap-3">
+            <button
+              id="themeToggleMobile"
+              class="theme-toggle"
+              aria-label="تغییر تم موبایل"
+              title="تغییر تم"
+              style="width: 44px; height: 44px"
+            >
+              <i class="fas fa-moon"></i>
+            </button>
+            <button
+              id="closeMobileMenu"
+              class="text-4xl"
+              style="color: var(--text-secondary)"
+            >
+              &times;
+            </button>
+          </div>
+        </div>
+        <nav class="space-y-4">
+          <a
+            href="index.html#home"
+            class="block text-lg py-3 border-b mobile-nav-link"
+            style="
+              color: var(--text-primary);
+              border-color: var(--border-color);
+              line-height: 3rem;
+              margin-top: 0;
+            "
+          >
+            <i class="fas fa-home ml-2"></i> خانه
+          </a>
+          <a
+            href="index.html#products"
+            class="block text-lg py-3 border-b mobile-nav-link"
+            style="
+              color: var(--text-primary);
+              border-color: var(--border-color);
+              line-height: 3rem;
+              margin-top: 0;
+            "
+          >
+            <i class="fas fa-box ml-2"></i> محصولات ما
+          </a>
+          <a
+            href="about.html"
+            class="block text-lg py-3 border-b mobile-nav-link"
+            style="
+              color: var(--text-primary);
+              border-color: var(--border-color);
+              line-height: 3rem;
+              margin-top: 0;
+            "
+          >
+            <i class="fas fa-info-circle ml-2"></i> درباره ما
+          </a>
+          <a
+            href="index.html#contact"
+            class="block text-lg py-3 border-b mobile-nav-link"
+            style="
+              color: var(--text-primary);
+              border-color: var(--border-color);
+              line-height: 3rem;
+              margin-top: 0;
+            "
+          >
+            <i class="fas fa-phone ml-2"></i> تماس با ما
+          </a>
+          <button
+            class="btn-primary w-full mt-6 nowrap"
+            onclick="scrollToContact()"
+          >
+            <i class="fas fa-headset"></i>
+            درخواست مشاوره
+          </button>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between py-4">
+          <!-- Logo -->
+          <div class="flex items-center space-x-3 space-x-reverse">
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-900 rounded-xl flex items-center justify-center shadow-lg"
+            >
+              <i class="fas fa-cog text-white text-2xl"></i>
+            </div>
+            <div>
+              <h1 class="text-xl font-bold" style="color: var(--text-primary)">
+                ماشین سازی آراد
+              </h1>
+              <p class="text-xs" style="color: var(--text-secondary)">
+                نوآوری در بسته‌بندی
+              </p>
+            </div>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden lg:flex items-center space-x-8 space-x-reverse">
+            <a href="index.html#home" class="nav-link nowrap">خانه</a>
+            <div class="relative" id="productsMenuWrapper">
+              <a
+                href="index.html#products"
+                class="nav-link cursor-pointer nowrap"
+                id="productsMenuTrigger"
+              >
+                محصولات ما <i class="fas fa-chevron-down text-xs mr-1"></i>
+              </a>
+              <!-- Mega Menu -->
+              <div class="mega-menu" id="megaMenu">
+                <ul class="mega-menu-categories">
+                  <li class="category-item" data-target="cat-small">
+                    دستگاه‌های کوچک
+                  </li>
+                  <li class="category-item" data-target="cat-medium">
+                    دستگاه‌های متوسط
+                  </li>
+                  <li class="category-item" data-target="cat-large">
+                    دستگاه‌های بزرگ
+                  </li>
+                </ul>
+
+                <div class="mega-menu-content">
+                  <!-- Small -->
+                  <div class="submenu" id="cat-small">
+                    <a class="mega-menu-item">دستگاه درب‌بسته‌کن AR-100</a>
+                    <a class="mega-menu-item">پرکن نیمه‌اتوماتیک AR-150</a>
+                    <a class="mega-menu-item">دستگاه لیبل‌زن AR-200</a>
+                    <a class="mega-menu-item">دستگاه شرینک AR-250</a>
+                  </div>
+
+                  <!-- Medium -->
+                  <div class="submenu" id="cat-medium">
+                    <a class="mega-menu-item">نوارکش اتوماتیک AR-300</a>
+                    <a class="mega-menu-item">ترازوی صنعتی AR-350</a>
+                    <a class="mega-menu-item">دستگاه کدینگ AR-400</a>
+                    <a class="mega-menu-item">پرکن اتوماتیک AR-450</a>
+                  </div>
+
+                  <!-- Large -->
+                  <div class="submenu" id="cat-large">
+                    <a class="mega-menu-item">خط تولید کامل AR-500</a>
+                    <a class="mega-menu-item">پالت‌بند صنعتی AR-550</a>
+                    <a class="mega-menu-item">ربات بسته‌بندی AR-600</a>
+                    <a class="mega-menu-item">سیستم کانوایر AR-650</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="about.html" class="nav-link nowrap">درباره ما</a>
+            <a href="index.html#contact" class="nav-link nowrap">تماس با ما</a>
+          </nav>
+
+          <!-- Right Side Actions -->
+          <div class="hidden lg:flex items-center space-x-4 space-x-reverse">
+            <!-- Search -->
+            <div class="search-container relative">
+              <button
+                id="searchToggle"
+                class="text-2xl transition hover:scale-110"
+              >
+                <i class="fas fa-search"></i>
+              </button>
+              <div id="searchBox" class="search-dropdown">
+                <input
+                  type="text"
+                  id="searchInput"
+                  placeholder="جستجو در محصولات..."
+                  class="search-input-dropdown"
+                  autocomplete="off"
+                />
+                <button id="closeSearch" class="close-search">&times;</button>
+              </div>
+            </div>
+
+            <!-- Theme Toggle -->
+            <button
+              class="theme-toggle"
+              id="themeToggle"
+              aria-label="تغییر تم"
+              title="تغییر تم"
+            >
+              <i class="fas fa-moon" id="themeIcon"></i>
+            </button>
+
+            <!-- CTA Button -->
+            <button class="btn-primary" onclick="scrollToContact()">
+              <i class="fas fa-headset"></i>
+              درخواست مشاوره
+            </button>
+          </div>
+
+          <!-- Mobile Menu Toggle -->
+          <button
+            class="lg:hidden text-2xl"
+            id="mobileMenuToggle"
+            style="color: var(--text-primary)"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN: فقط محتوای درباره ما -->
+    <main class="mt-20">
+      <!-- Hero درباره ما -->
+      <section class="py-20 pattern-bg">
+        <div class="container mx-auto px-4">
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+              <p
+                class="text-sm font-semibold mb-3 tracking-widest uppercase"
+                style="color: var(--text-tertiary)"
+              >
+                درباره ماشین‌سازی آراد
+              </p>
+              <h1
+                class="text-4xl md:text-5xl font-bold mb-6 leading-tight"
+                style="color: var(--text-primary)"
+              >
+                بیش از ۱۵ سال تجربه در طراحی و ساخت دستگاه‌های بسته‌بندی صنعتی
+              </h1>
+              <p
+                class="text-lg mb-4 leading-relaxed"
+                style="color: var(--text-secondary)"
+              >
+                از یک کارگاه کوچک شروع کردیم و امروز به یک مجموعه مهندسی کامل
+                برای طراحی، ساخت و اتوماسیون خطوط بسته‌بندی در صنایع غذایی،
+                دارویی و شیمیایی تبدیل شده‌ایم.
+              </p>
+              <p
+                class="text-lg mb-8 leading-relaxed"
+                style="color: var(--text-secondary)"
+              >
+                تمرکز ما بر روی کیفیت پایدار، طراحی مهندسی و پشتیبانی واقعی پس
+                از فروش است تا خط تولید شما بدون توقف و با حداکثر بهره‌وری کار
+                کند.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <a href="index.html#contact" class="btn-primary">
+                  <i class="fas fa-phone-alt"></i>
+                  درخواست مشاوره
+                </a>
+                <a href="index.html#products" class="btn-secondary">
+                  <i class="fas fa-box-open"></i>
+                  مشاهده محصولات
+                </a>
+              </div>
+            </div>
+            <div data-aos="fade-left">
+              <div class="grid grid-cols-2 gap-4 md:gap-6">
+                <div class="stat-card">
+                  <div class="stat-number">15+</div>
+                  <p
+                    class="font-semibold mt-2"
+                    style="color: var(--text-secondary)"
+                  >
+                    سال تجربه
+                  </p>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-number">200+</div>
+                  <p
+                    class="font-semibold mt-2"
+                    style="color: var(--text-secondary)"
+                  >
+                    پروژه موفق
+                  </p>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-number">10+</div>
+                  <p
+                    class="font-semibold mt-2"
+                    style="color: var(--text-secondary)"
+                  >
+                    صنعت مختلف
+                  </p>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-number">98%</div>
+                  <p
+                    class="font-semibold mt-2"
+                    style="color: var(--text-secondary)"
+                  >
+                    رضایت مشتریان
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- داستان و مأموریت -->
+      <section class="py-20" style="background-color: var(--bg-primary)">
+        <div class="container mx-auto px-4">
+          <div class="grid md:grid-cols-2 gap-12 items-start">
+            <div data-aos="fade-up">
+              <h2
+                class="text-3xl md:text-4xl font-bold mb-6"
+                style="color: var(--text-primary)"
+              >
+                داستان شکل‌گیری آراد
+              </h2>
+              <p
+                class="text-lg mb-4 leading-relaxed"
+                style="color: var(--text-secondary)"
+              >
+                آراد از دل نیاز واقعی خطوط تولید به وجود آمد؛ جایی که دستگاه‌های
+                آماده، دقیقاً مطابق ظرفیت، فضا و فرآیند هر کارخانه نبودند. ما
+                تصمیم گرفتیم دستگاه‌هایی طراحی کنیم که با شرایط واقعی سالن تولید
+                هماهنگ باشند.
+              </p>
+              <p
+                class="text-lg leading-relaxed"
+                style="color: var(--text-secondary)"
+              >
+                امروز تیم ما ترکیبی از مهندسان مکانیک، برق، کنترل و اتوماسیون
+                است که از طراحی اولیه تا نصب و راه‌اندازی در کنار شما هستند.
+              </p>
+            </div>
+            <div class="space-y-4" data-aos="fade-up" data-aos-delay="150">
+              <div
+                class="p-5 rounded-2xl shadow-lg"
+                style="background-color: var(--card-bg)"
+              >
+                <h3
+                  class="text-xl font-bold mb-2"
+                  style="color: var(--text-primary)"
+                >
+                  مأموریت ما
+                </h3>
+                <p style="color: var(--text-secondary)">
+                  ارائه راه‌حل‌های بسته‌بندی که دقیقاً با ظرفیت، نوع محصول و
+                  فضای سالن شما هماهنگ باشد؛ نه فقط فروش یک دستگاه آماده.
+                </p>
+              </div>
+              <div
+                class="p-5 rounded-2xl shadow-lg"
+                style="background-color: var(--card-bg)"
+              >
+                <h3
+                  class="text-xl font-bold mb-2"
+                  style="color: var(--text-primary)"
+                >
+                  چشم‌انداز
+                </h3>
+                <p style="color: var(--text-secondary)">
+                  تبدیل شدن به یکی از برندهای مرجع در حوزه ماشین‌آلات بسته‌بندی
+                  در ایران و منطقه، با تمرکز بر نوآوری، پایداری و پشتیبانی
+                  بلندمدت.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ارزش‌ها -->
+      <section class="py-20 pattern-bg">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12" data-aos="fade-up">
+            <h2
+              class="text-3xl md:text-4xl font-bold mb-4"
+              style="color: var(--text-primary)"
+            >
+              ارزش‌های اصلی ما
+            </h2>
+            <p class="text-lg" style="color: var(--text-secondary)">
+              اصولی که در طراحی، ساخت و پشتیبانی دستگاه‌های ما ثابت می‌مانند
+            </p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div
+              class="p-5 rounded-2xl shadow-lg"
+              style="background-color: var(--card-bg)"
+              data-aos="fade-up"
+            >
+              <h3
+                class="font-bold text-xl mb-3"
+                style="color: var(--text-primary)"
+              >
+                کیفیت مهندسی
+              </h3>
+              <p style="color: var(--text-secondary)">
+                استفاده از قطعات استاندارد، کنترل کیفیت در تمام مراحل و تست‌های
+                عملیاتی قبل از تحویل.
+              </p>
+            </div>
+            <div
+              class="p-5 rounded-2xl shadow-lg"
+              style="background-color: var(--card-bg)"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <h3
+                class="font-bold text-xl mb-3"
+                style="color: var(--text-primary)"
+              >
+                نوآوری مستمر
+              </h3>
+              <p style="color: var(--text-secondary)">
+                به‌روزرسانی طراحی‌ها بر اساس تکنولوژی روز و بازخورد مستقیم از
+                خطوط تولید مشتریان.
+              </p>
+            </div>
+            <div
+              class="p-5 rounded-2xl shadow-lg"
+              style="background-color: var(--card-bg)"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <h3
+                class="font-bold text-xl mb-3"
+                style="color: var(--text-primary)"
+              >
+                مشتری‌محوری
+              </h3>
+              <p style="color: var(--text-secondary)">
+                طراحی سفارشی برای هر پروژه با توجه به فضای سالن، ظرفیت و نوع
+                محصول شما.
+              </p>
+            </div>
+            <div
+              class="p-5 rounded-2xl shadow-lg"
+              style="background-color: var(--card-bg)"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <h3
+                class="font-bold text-xl mb-3"
+                style="color: var(--text-primary)"
+              >
+                پشتیبانی واقعی
+              </h3>
+              <p style="color: var(--text-secondary)">
+                آموزش اپراتورها، نصب و راه‌اندازی، و خدمات پس از فروش
+                برنامه‌ریزی‌شده.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- تیم -->
+      <section class="py-20" style="background-color: var(--bg-primary)">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12" data-aos="fade-up">
+            <h2
+              class="text-3xl md:text-4xl font-bold mb-4"
+              style="color: var(--text-primary)"
+            >
+              تیم مدیریت
+            </h2>
+            <p class="text-lg" style="color: var(--text-secondary)">
+              ترکیبی از تجربه صنعتی و دانش مهندسی
+            </p>
+          </div>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div
+              class="p-6 rounded-2xl shadow-lg text-center"
+              style="background-color: var(--card-bg)"
+              data-aos="fade-up"
+            >
+              <div class="text-4xl mb-3">🧭</div>
+              <h3
+                class="font-bold text-xl mb-2"
+                style="color: var(--text-primary)"
+              >
+                مدیرعامل
+              </h3>
+              <p style="color: var(--text-secondary)">
+                مسئول استراتژی، توسعه بازار و همکاری‌های کلان صنعتی.
+              </p>
+            </div>
+            <div
+              class="p-6 rounded-2xl shadow-lg text-center"
+              style="background-color: var(--card-bg)"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="text-4xl mb-3">⚙️</div>
+              <h3
+                class="font-bold text-xl mb-2"
+                style="color: var(--text-primary)"
+              >
+                مدیر فنی
+              </h3>
+              <p style="color: var(--text-secondary)">
+                رهبری تیم طراحی مکانیک، برق، کنترل و اتوماسیون خط تولید.
+              </p>
+            </div>
+            <div
+              class="p-6 rounded-2xl shadow-lg text-center"
+              style="background-color: var(--card-bg)"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="text-4xl mb-3">🤝</div>
+              <h3
+                class="font-bold text-xl mb-2"
+                style="color: var(--text-primary)"
+              >
+                مدیر خدمات پس از فروش
+              </h3>
+              <p style="color: var(--text-secondary)">
+                برنامه‌ریزی نصب، راه‌اندازی و پشتیبانی دوره‌ای در محل شما.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA نهایی -->
+      <section class="py-16 pattern-bg">
+        <div class="container mx-auto px-4">
+          <div
+            class="rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl"
+            style="background-color: var(--card-bg)"
+            data-aos="fade-up"
+          >
+            <div>
+              <h2
+                class="text-2xl md:text-3xl font-bold mb-3"
+                style="color: var(--text-primary)"
+              >
+                آماده ارتقای خط بسته‌بندی خود هستید؟
+              </h2>
+              <p class="text-lg" style="color: var(--text-secondary)">
+                با تیم ما تماس بگیرید تا بر اساس ظرفیت، نوع محصول و فضای سالن
+                شما، بهترین راه‌حل پیشنهاد شود.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-4">
+              <a href="index.html#contact" class="btn-primary">
+                <i class="fas fa-headset"></i>
+                درخواست مشاوره
+              </a>
+              <a href="index.html#products" class="btn-secondary">
+                <i class="fas fa-box-open"></i>
+                مشاهده دستگاه‌ها
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer (همان index) -->
+    <footer
+      class="py-16 pb-0"
+      style="
+        background: linear-gradient(
+          135deg,
+          var(--blue-dark) 0%,
+          var(--blue-primary) 100%
+        );
+      "
+    >
+      <div class="container mx-auto px-4">
+        <div class="grid gap-10 mb-12 md:grid-cols-4 text-center md:text-right">
+          <!-- About: دو ستون در دسکتاپ، وسط‌چین در موبایل -->
+          <div class="md:col-span-2 flex flex-col items-center md:items-start">
+            <div
+              class="flex items-center space-x-3 space-x-reverse mb-5 justify-center md:justify-start"
+            >
+              <div
+                class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg"
+              >
+                <i
+                  class="fas fa-cog text-2xl"
+                  style="color: var(--blue-primary)"
+                ></i>
+              </div>
+              <h3 class="text-xl font-bold text-white">آراد ماشین‌سازی</h3>
+            </div>
+            <p class="text-blue-100 leading-relaxed">
+              راه‌حل‌های هوشمند بسته‌بندی صنعتی با بیش از 15 سال تجربه، تخصص و
+              کیفیت برتر
+            </p>
+            <div class="flex gap-3 mt-6 justify-center md:justify-start">
+              <a
+                href="#"
+                class="w-9 h-9 bg-blue-700 rounded-xl flex items-center justify-center hover:bg-blue-600 transition text-white shadow-lg"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 bg-blue-700 rounded-xl flex items-center justify-center hover:bg-blue-600 transition text-white shadow-lg"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 bg-blue-700 rounded-xl flex items-center justify-center hover:bg-blue-600 transition text-white shadow-lg"
+              >
+                <i class="fab fa-telegram"></i>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 bg-blue-700 rounded-xl flex items-center justify-center hover:bg-blue-600 transition text-white shadow-lg"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="flex flex-col items-center md:items-start">
+            <h4 class="text-lg font-bold mb-5 text-white">دسترسی سریع</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="index.html#home"
+                  class="text-blue-100 hover:text-white transition flex items-center gap-2"
+                  ><i class="fas fa-chevron-left text-xs"></i> خانه</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#products"
+                  class="text-blue-100 hover:text-white transition flex items-center gap-2"
+                  ><i class="fas fa-chevron-left text-xs"></i> محصولات</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about.html"
+                  class="text-blue-100 hover:text-white transition flex items-center gap-2"
+                  ><i class="fas fa-chevron-left text-xs"></i> درباره ما</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#contact"
+                  class="text-blue-100 hover:text-white transition flex items-center gap-2"
+                  ><i class="fas fa-chevron-left text-xs"></i> تماس با ما</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="flex flex-col items-center md:items-start">
+            <h4 class="text-lg font-bold mb-5 text-white">اطلاعات تماس</h4>
+            <ul class="space-y-4 text-blue-100">
+              <li class="flex items-start gap-3">
+                <i class="fas fa-map-marker-alt mt-1"></i>
+                <span>اصفهان ، ارغوانیه</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fas fa-phone"></i>
+                <span dir="ltr">021-1234567</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fas fa-envelope"></i>
+                <span>info@aradmachine.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="copyright-bar" role="contentinfo">
+          شرکت ماشین‌سازی آراد. تمامی حقوق محفوظ است. © 2025
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <div class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up text-xl"></i>
+    </div>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </body>
+</html>

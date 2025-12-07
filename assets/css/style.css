@@ -229,156 +229,47 @@ header.scrolled {
 }
 
 /* Mega Menu */
-#productsMenuWrapper {
-  position: relative;
-  display: inline-block;
-}
-.mega-menu {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 680px;
-  max-width: 95vw;
-  margin-top: 4px;
-  background: var(--bg-primary);
-  border-radius: 20px;
-  box-shadow: 0 25px 70px var(--shadow-hover);
+/* استایل جدید برای منوی ساده */
+.mega-menu.simple-dropdown {
+  width: 300px !important; /* عرض کمتر برای لیست ساده */
+  display: block; /* حذف حالت flex قبلی */
+  padding: 0;
   overflow: hidden;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(-50%) translateY(20px); /* انیمیشن از بالا */
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  z-index: 9999;
-  border: 1px solid var(--border-color);
-  backdrop-filter: blur(12px);
-}
-#productsMenuWrapper::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 200px;
-  height: 20px;
-  background: transparent;
-  z-index: 9999;
-  pointer-events: none;
+  right: 0;
+  left: auto;
 }
 
-#productsMenuWrapper:hover #megaMenu,
-#megaMenu:hover {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
-}
-/* ردیف اول: دسته‌بندی‌ها */
-.mega-menu-categories {
+.dropdown-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  padding: 28px 40px;
-  background: var(--bg-secondary);
-  border-bottom: 1px solid var(--border-color);
-  gap: 32px;
-  justify-content: center;
-}
-
-.category-item {
-  padding: 12px 20px;
-  border-radius: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s;
-  color: var(--text-secondary);
-}
-
-.category-item:hover,
-.category-item.active {
-  background: var(--blue-light);
-  color: var(--blue-primary);
-  transform: translateY(-2px);
-}
-
-/* بخش زیرمجموعه‌ها */
-.mega-menu-content {
-  padding: 40px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
-  background: var(--bg-primary);
-}
-
-.submenu {
-  display: none;
   flex-direction: column;
-  gap: 14px;
 }
 
-/* فعال کردن زیرمنوی مربوطه */
-.submenu.active {
-  display: flex;
-}
-
-/* آیتم زیرمنو */
-.mega-menu-item {
-  padding: 12px 16px;
-  border-radius: 10px;
-  color: var(--text-secondary);
-  transition: all 0.3s;
-  cursor: pointer;
+.dropdown-list li a {
   display: flex;
   align-items: center;
+  padding: 12px 20px;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  background: white;
+  text-decoration: none;
 }
 
-.mega-menu-item:hover {
-  background: var(--bg-secondary);
+.dropdown-list li a:hover {
+  background-color: #f8fafc;
   color: var(--blue-primary);
-  padding-right: 20px;
-  transform: translateX(-6px);
-}
-@media (max-width: 1024px) {
-  #megaMenu {
-    width: 720px;
-  }
-  .mega-menu-content {
-    grid-template-columns: 1fr 1fr;
-  }
+  padding-right: 25px; /* افکت حرکت به چپ هنگام هاور */
 }
 
-@media (max-width: 768px) {
-  #megaMenu {
-    width: 95vw;
-    right: 50%;
-    transform: translateX(50%) translateY(20px);
-  }
-  #productsMenuWrapper:hover #megaMenu {
-    transform: translateX(50%) translateY(0);
-  }
-  .mega-menu-content {
-    grid-template-columns: 1fr;
-  }
-  .mega-menu-categories {
-    flex-direction: column;
-    padding: 20px;
-  }
+.dropdown-list li:last-child a {
+  border-bottom: none;
 }
 
-.mega-menu.active {
-  display: block;
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.mega-menu-item {
-  transition: all 0.3s;
-  padding: 8px 0;
-}
-
-.mega-menu-item:hover {
-  color: var(--blue-primary);
-  transform: translateX(-5px);
-}
-
+/* Search Dropdown */
 .search-container {
   position: relative;
   display: inline-block;
@@ -1382,4 +1273,72 @@ footer {
     padding-left: 12px;
     padding-right: 12px;
   }
+}
+
+/* =========================================
+   استایل‌های جدید دراپ‌داون محصولات
+   ========================================= */
+.products-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 280px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.15);
+  padding: 8px 0;
+  z-index: 50;
+
+  /* مخفی بودن پیش‌فرض */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+/* کلاس فعال برای نمایش */
+.products-dropdown.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* لیست و آیتم‌ها */
+.dropdown-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-list li a {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: var(--text-primary); /* از متغیرهای خودت استفاده کردیم */
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-right: 3px solid transparent;
+  background: white; /* برای اطمینان */
+}
+
+.dropdown-list li a:hover {
+  background-color: #f8fafc;
+  color: #2563eb; /* رنگ آبی */
+  border-right-color: #2563eb;
+  padding-right: 24px;
+}
+
+.dropdown-list li a i {
+  font-size: 0.7rem;
+  transition: transform 0.2s;
+}
+
+.dropdown-list li a:hover i {
+  transform: translateX(-2px);
+  opacity: 1 !important;
 }

@@ -1,4 +1,4 @@
-export const productsData = {
+const productsData = {
   1: {
     name: "دستگاه درب‌بسته‌کن AR-100",
     category: "کوچک",
@@ -182,3 +182,4 @@ export const productsData = {
     ],
   },
 };
+export default productsData;
