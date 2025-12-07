@@ -502,7 +502,7 @@ header.scrolled {
   background-color: var(--bg-secondary);
   background-image: linear-gradient(
       30deg,
-      var(--bg-primary) 12%,
+      var(--bg-tertiary) 6%,
       transparent 12.5%,
       transparent 87%,
       var(--bg-tertiary) 87.5%,
@@ -1341,4 +1341,166 @@ footer {
 .dropdown-list li a:hover i {
   transform: translateX(-2px);
   opacity: 1 !important;
+}
+
+/* ==================== Dropdown Menu (Fix) ==================== */
+.dropdown {
+  position: relative; /* مهم برای اینکه زیرمنو نسبت به این تنظیم بشه */
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown__trigger {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.dropdown__trigger i {
+  font-size: 0.8em;
+  transition: transform 0.3s ease;
+}
+
+/* چرخش فلش وقتی موس میره روش */
+.dropdown:hover .dropdown__trigger i {
+  transform: rotate(180deg);
+}
+
+.dropdown__menu {
+  position: absolute;
+  top: 100%; /* دقیقاً زیر آیتم پدر */
+  right: 0; /* راست‌چین نسبت به پدر */
+  width: 280px; /* عرض ثابت و مناسب */
+  background: var(--white);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.15); /* سایه نرم */
+  border-radius: 12px;
+  padding: 10px 0;
+  z-index: 10000; /* عدد بالا برای اینکه روی همه‌چیز بیاد */
+
+  /* انیمیشن مخفی/ظاهر شدن */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none; /* وقتی مخفیه کلیک نشه */
+  border: 1px solid rgba(0, 0, 0, 0.05); /* خط نازک دورش */
+}
+
+/* وقتی موس روی .dropdown (پدر) رفت، منو ظاهر بشه */
+.dropdown:hover .dropdown__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* استایل آیتم‌های داخل لیست */
+.dropdown__menu li {
+  display: block;
+  width: 100%;
+}
+
+.dropdown__menu li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  border-right: 3px solid transparent; /* خط رنگی سمت راست */
+}
+
+.dropdown__menu li a i {
+  color: var(--text-light); /* رنگ آیکون‌ها */
+  width: 20px;
+  text-align: center;
+  transition: color 0.2s;
+}
+
+/* هاور روی آیتم‌ها */
+.dropdown__menu li a:hover {
+  background: #f8fafc;
+  color: var(--primary-color);
+  border-right-color: var(--primary-color);
+  padding-right: 25px; /* افکت حرکت به چپ */
+}
+
+.dropdown__menu li a:hover i {
+  color: var(--primary-color);
+}
+/* ==================== Dropdown Menu Styles ==================== */
+/* کانتینر اصلی که دکمه و لیست توش هستن */
+.dropdown {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* لیست آبشاری (مخفی به صورت پیش‌فرض) */
+.dropdown__menu {
+  position: absolute;
+  top: 100%; /* دقیقا زیر هدر */
+  right: 0; /* راست‌چین */
+  width: 260px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 10px 0;
+  z-index: 999;
+
+  /* انیمیشن */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none; /* وقتی مخفیه کلیک نشه */
+}
+
+/* وقتی موس بره روی کانتینر اصلی (.dropdown)، لیست ظاهر بشه */
+.dropdown:hover .dropdown__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* استایل لینک‌های داخل لیست */
+.dropdown__menu li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  color: #333;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-right: 3px solid transparent;
+}
+
+/* هاور روی لینک‌ها */
+.dropdown__menu li a:hover {
+  background-color: #f8fafc;
+  color: #2563eb; /* آبی */
+  border-right-color: #2563eb;
+  padding-right: 25px; /* حرکت جزئی به چپ */
+}
+
+.dropdown__menu li a i {
+  width: 20px;
+  text-align: center;
+  color: #94a3b8; /* خاکستری */
+}
+
+.dropdown__menu li a:hover i {
+  color: #2563eb;
+}
+/* وقتی موس روی .dropdown (پدر) رفت، .dropdown__menu (فرزند) ظاهر بشه */
+.dropdown:hover .dropdown__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }

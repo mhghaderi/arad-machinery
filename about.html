@@ -201,57 +201,51 @@
           </div>
 
           <!-- Desktop Navigation -->
+          <!-- Desktop Navigation -->
           <nav class="hidden lg:flex items-center space-x-8 space-x-reverse">
-            <a href="index.html#home" class="nav-link nowrap">خانه</a>
-            <div class="relative" id="productsMenuWrapper">
+            <a href="index.html" class="nav-link nowrap">خانه</a>
+
+            <!-- منوی محصولات (ساختار صحیح) -->
+            <div class="nav__item dropdown" id="productsMenuWrapper">
               <a
                 href="index.html#products"
-                class="nav-link cursor-pointer nowrap"
+                class="nav__link dropdown__trigger"
                 id="productsMenuTrigger"
               >
-                محصولات ما <i class="fas fa-chevron-down text-xs mr-1"></i>
+                محصولات ما
+                <i
+                  class="fas fa-chevron-down"
+                  style="font-size: 0.8em; margin-right: 5px"
+                ></i>
               </a>
-              <!-- Mega Menu -->
-              <div class="mega-menu" id="megaMenu">
-                <ul class="mega-menu-categories">
-                  <li class="category-item" data-target="cat-small">
-                    دستگاه‌های کوچک
-                  </li>
-                  <li class="category-item" data-target="cat-medium">
-                    دستگاه‌های متوسط
-                  </li>
-                  <li class="category-item" data-target="cat-large">
-                    دستگاه‌های بزرگ
-                  </li>
-                </ul>
-
-                <div class="mega-menu-content">
-                  <!-- Small -->
-                  <div class="submenu" id="cat-small">
-                    <a class="mega-menu-item">دستگاه درب‌بسته‌کن AR-100</a>
-                    <a class="mega-menu-item">پرکن نیمه‌اتوماتیک AR-150</a>
-                    <a class="mega-menu-item">دستگاه لیبل‌زن AR-200</a>
-                    <a class="mega-menu-item">دستگاه شرینک AR-250</a>
-                  </div>
-
-                  <!-- Medium -->
-                  <div class="submenu" id="cat-medium">
-                    <a class="mega-menu-item">نوارکش اتوماتیک AR-300</a>
-                    <a class="mega-menu-item">ترازوی صنعتی AR-350</a>
-                    <a class="mega-menu-item">دستگاه کدینگ AR-400</a>
-                    <a class="mega-menu-item">پرکن اتوماتیک AR-450</a>
-                  </div>
-
-                  <!-- Large -->
-                  <div class="submenu" id="cat-large">
-                    <a class="mega-menu-item">خط تولید کامل AR-500</a>
-                    <a class="mega-menu-item">پالت‌بند صنعتی AR-550</a>
-                    <a class="mega-menu-item">ربات بسته‌بندی AR-600</a>
-                    <a class="mega-menu-item">سیستم کانوایر AR-650</a>
-                  </div>
-                </div>
-              </div>
+              <!-- لیست آبشاری -->
+              <ul class="dropdown__menu">
+                <li>
+                  <a href="#"
+                    ><i class="fas fa-box"></i> دستگاه درب‌بند اتوماتیک</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fas fa-bottle-water"></i> پرکن مایعات رقیق</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fas fa-tag"></i> دستگاه لیبل‌زن صنعتی</a
+                  >
+                </li>
+                <li>
+                  <a href="#"><i class="fas fa-tape"></i> کارتن چسب‌زن</a>
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fas fa-industry"></i> خط کامل بسته‌بندی</a
+                  >
+                </li>
+              </ul>
             </div>
+
             <a href="about.html" class="nav-link nowrap">درباره ما</a>
             <a href="index.html#contact" class="nav-link nowrap">تماس با ما</a>
           </nav>
